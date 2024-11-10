@@ -1,0 +1,56 @@
+What is a docker ?
+
+A docker is a platform for building, running and shipping applications in a consistent manner.
+
+So, if your application works on your development machine. So, with the help of docker it can run and function the same way on other machines.
+
+Many a time develpers come across this situation where your application works on your development machine but does not somewhere else.
+
+Posssible reasons for this situation :-
+1. One or more files are missing as part of your deployment.
+2. It can also happen when a target machine is running a different version of some softwares that your application needs. 
+For example, your application needs node version 14 but the target machine is running node version 9.
+
+3. This can also happen if the "configuration settings" like environment variables are different across these machines.
+
+This is where docker comes to rescue.
+
+Docker can easily package up our application with everything it needs and run it anywhere on any machine with docker.
+
+So, if your appiation needs a given version of node and mongodb then all of these will be included in your application's package.
+
+Now you can take this package and run it on ny machine that runs docker.
+
+So, if your project works on your development machine, it's definitely going to work on your test and production machines.
+
+Suppose someone's joins your team you don't have to spend half a day or so, setting up a new machine to run your application. Your team don't have to install and configure all these dependencies on new machine.
+
+Simply write :-
+
+$ docker-compose up
+
+To bring up your application on new machine.
+Docker itself will autmatically download and run all the required dependencies inside an isolated environment called a "container".
+
+To set up your application on a new machine, Docker simplifies the process by automatically downloading and running all necessary dependencies within an isolated environment called a "container."
+
+The main advantage of Docker is that it creates a self-contained space for each application, ensuring that different applications can use different software versions without conflicting. For instance, one application might require Node.js version 14, while another might need Node.js version 9. With Docker, both applications can run on the same machine without interference.
+
+This isolation allows Docker to keep applications consistent and reliable across various machines, making it easy to run the same application setup anywhere, regardless of the underlying system setup. This consistency and isolation are core features that make Docker a powerful tool for developers.
+
+One more benfit :-
+Suppose we are done with any application and don't want to work on it anymore, we can remove the application and all its dependencies in one go.
+
+And without docker, as we work on different projects. Our development machine gets cluttered with so many libraries and tools that are used by different applications and then after a while we don't know that if we can remove one or more of these tools because we are always afraid that we would mess up with some application.
+
+But with docker, we don't have to worry about this. Because each application runs with its dependencies inside an isolated environment.
+
+We can safely remove an application with all its dependencies to clean up our machine.
+
+$ docker-compose down -rmi all
+
+
+In nutshell,
+
+Docker helps :-
+Consistently build, run and ship applications.
